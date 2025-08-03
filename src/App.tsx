@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layout, Menu, theme } from 'antd';
 import JsonFormatter from './components/JsonFormatter';
 import TimestampConverter from './components/TimestampConverter';
+import Base64EncoderDecoder from './components/Base64EncoderDecoder';
 import './App.css';
 
 const { Header, Content, Footer } = Layout;
@@ -17,6 +18,10 @@ const App: React.FC = () => {
     {
       label: '时间戳转换',
       key: 'timestamp',
+    },
+    {
+      label: 'Base64编码/解码',
+      key: 'base64',
     },
   ];
 
@@ -40,6 +45,7 @@ const App: React.FC = () => {
         <div className="site-layout-content" style={{ background: colorBgContainer }}>
           {current === 'json' && <JsonFormatter />}
           {current === 'timestamp' && <TimestampConverter />}
+          {current === 'base64' && <Base64EncoderDecoder />}
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>前端工具箱 ©2023</Footer>
