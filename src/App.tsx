@@ -3,6 +3,7 @@ import { Layout, Menu, theme } from 'antd';
 import JsonFormatter from './components/JsonFormatter';
 import TimestampConverter from './components/TimestampConverter';
 import Base64EncoderDecoder from './components/Base64EncoderDecoder';
+import UrlEncoderDecoder from './components/UrlEncoderDecoder';
 import './App.css';
 
 const { Header, Content, Footer } = Layout;
@@ -22,6 +23,10 @@ const App: React.FC = () => {
     {
       label: 'Base64编码/解码',
       key: 'base64',
+    },
+    {
+      label: 'URL编码/解码',
+      key: 'url',
     },
   ];
 
@@ -46,6 +51,7 @@ const App: React.FC = () => {
           {current === 'json' && <JsonFormatter />}
           {current === 'timestamp' && <TimestampConverter />}
           {current === 'base64' && <Base64EncoderDecoder />}
+          {current === 'url' && <UrlEncoderDecoder />}
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>前端工具箱 ©2023</Footer>
